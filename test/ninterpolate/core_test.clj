@@ -22,5 +22,6 @@
  (testing "bivariant"
     (is (= 2.0 (linear_interpolate table2d 1.0 1.0)) )
     (is (= 9.0 (linear_interpolate table2d 1.5 7.0)) )
+    (is (= 10.5 (linear_interpolate table2d 1.5 8.0)) )
  )
 )
