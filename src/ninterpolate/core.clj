@@ -1,7 +1,5 @@
-(ns ninterpolate.core
-   (:gen-class)
-)
-(use 'clojure.tools.trace)
+(ns ninterpolate.core)
+;(use 'clojure.tools.trace)
 
 (defn- bracket2 
     "returns a list containing 2 key value pairs that bracket the x value. the first 2 pairs or last 2 pairs are returned if x is 

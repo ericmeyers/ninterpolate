@@ -2,6 +2,11 @@
   (:require [clojure.test :refer :all]
             [ninterpolate.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+
+(def table1d {1,2 3,4 5,6})
+
+(deftest simple-test
+  (testing "test a simple 1-d table"
+    (is (= 3.0 (linear_interpolate table1d 2.0)))
+  )
+)
