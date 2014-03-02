@@ -37,6 +37,7 @@
     (is (= 3.0 (interpolate table1dus 2.0)) "unsorted")
     (is (= 2.0 (interpolate table1dus -1.0)) "np extrapolate")
     (is (= 0.0 (interpolate table1dus {:extrap true :value -1.0})) "extrapolate")
+    (is (= 3.083333333333333 (interpolate table1d {:value 2.0 :order 2}))   "2nd order")
 
  )
  (testing "bivariant"

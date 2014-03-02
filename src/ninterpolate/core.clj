@@ -115,19 +115,19 @@
 
 
 
-(defmulti interpolate (fn [table xr & xrs] (class xr)))
+(defmulti interpolate (fn [table xr & xrs] (map? xr)))
 
 ;
 ; no options supplied with the independent argument so just call linear interpolation without extrapolation
 ;
-(defmethod interpolate Number [table xr & xrs] 
+(defmethod interpolate false [table xr & xrs] 
    (apply linear_interpolate {:extrap false} table xr xrs)
 )
 
 ;
 ; xr is a hash meaning some options were passed with the independent argument (interpolation order, allow extrapolation, etc)
 ;
-(defmethod interpolate clojure.lang.PersistentArrayMap [table xr & xrs] 
+(defmethod interpolate true [table xr & xrs] 
    {:pre [
            (not (nil? (:value xr)))     
          ]
