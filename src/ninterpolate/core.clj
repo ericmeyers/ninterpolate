@@ -102,9 +102,9 @@
      ([opts table xr1 & xrs]
        (let [
              [[xl tablel] [xh1 tableh1] [xh2 tableh2]] (bracket3 xr1 table)
-             yl (apply lagrange2_interpolate tablel xrs)
-             yh1 (apply lagrange2_interpolate tableh1 xrs)
-             yh2 (apply lagrange2_interpolate tableh2 xrs)
+             yl (apply interpolate tablel xrs)
+             yh1 (apply interpolate tableh1 xrs)
+             yh2 (apply interpolate tableh2 xrs)
             ]
             (lagrange2_interpolate opts {xl yl xh1 yh1 xh2 yh2} xr1)
       )
