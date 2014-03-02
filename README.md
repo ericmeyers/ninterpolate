@@ -43,7 +43,7 @@ Or,
 
 The result would be 9.0
 
-Tables of higher dimensions are constrcuted the same way. A trivariant
+Tables of higher dimensions are constructed the same way. A trivariant
 table might look like this:
 
     (def table3d
@@ -94,7 +94,13 @@ or
 
     (interpolate table2d {:extrap false :value 0.0} {:extrap true :value 8.0})
 
-Etc.
+
+
+This library needs more work to check for valid tables, number of independents, etc.
+
+Stay tuned.
+
+Eric
 
 ## License
 
