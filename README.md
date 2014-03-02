@@ -4,7 +4,69 @@ A Clojure library designed to interpolate numeric tables of any dimension.
 
 ## Usage
 
-FIXME
+Numeric interplolation can be done on tables of any number of dimensions.
+
+All tables are hash-maps of independent,dependent pairs.
+
+The simplest table is a 1-D table of independent,dependent pairs of values:
+
+(def table1d {1.0,2.0 3.0,4.0 7.0,6.0})
+
+To read the table call interpolate and pass it the independent value to read the table at.
+
+(interpolate table1d 2.0)
+
+The result would be 3.0
+
+Higher dimension tables are still hashes of pairs, except the dependent values
+are also hash maps of pairs.
+
+For example, a bivariant table could look like this:
+
+(def table2d
+    {
+     1.0 {1,2 3,4 5,6 7,10.0}
+     2.0 {7,8 9,10.0, 11,12.0}
+    }
+)
+
+This table is read with two independent values:
+
+(interpolate table2d 1.0 1.0)
+
+The result would be 2.0
+
+Or,
+
+(interpolate table2d 1.5 7.0)
+
+The result would be 9.0
+
+Tables of higher dimensions are constrcuted the same way. A trivariant
+table might look like this:
+
+(def table3d
+  {
+   0.0
+    {
+      1.0 {1,2 3,4 5,6 7,10.0}
+      2.0 {7,8 9,10.0, 11,12.0}
+    }
+  
+   4.0
+    {
+      1.5 {11,2 13,4 15,6 7,10.0}
+      2.5 {17,8 19,10.0, 11,12.0}
+    }
+  }
+ 
+)
+
+To read it pass 3 independent values:
+
+(interpolate table3d 4.0 2.0 7.0)
+
+
 
 ## License
 
