@@ -3,7 +3,8 @@
 A Clojure library designed to interpolate numeric tables of any dimension.
 
 ##Installation
-In project.clj
+
+Add the following dependency to your project.clj file
 
     [ninterpolate "0.1.0-SNAPSHOT"]
 
