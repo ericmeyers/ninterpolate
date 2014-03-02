@@ -10,10 +10,9 @@ Add the following dependency to your project.clj file
 
 ## Usage
 
-Numeric interplolation can be done on tables of any number of dimensions.
-
     (use 'ninterpolate.core)
 
+Numeric interplolation can be done on tables of any number of dimensions.
 
 All tables are hash-maps of independent,dependent pairs.
 
