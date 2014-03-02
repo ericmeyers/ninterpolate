@@ -2,9 +2,17 @@
 
 A Clojure library designed to interpolate numeric tables of any dimension.
 
+##Installation
+In project.clj
+
+    [ninterpolate "0.1.0-SNAPSHOT"]
+
 ## Usage
 
 Numeric interplolation can be done on tables of any number of dimensions.
+
+    (use 'ninterpolate.core)
+
 
 All tables are hash-maps of independent,dependent pairs.
 
