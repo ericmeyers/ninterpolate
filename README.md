@@ -12,22 +12,22 @@ Add the following dependency to your project.clj file
 
     (use 'ninterpolate.core)
 
-Numeric interplolation can be done on tables of any number of dimensions.
+Numeric interpolation can be done on tables of any number of dimensions.
 
-All tables are hash-maps of independent,dependent pairs.
+All tables are maps containing independent,dependent pairs.
 
 The simplest table is a 1-D table of independent,dependent pairs of values:
 
     (def table1d {1.0,2.0 3.0,4.0 7.0,6.0})
 
-To read the table call interpolate and pass it the independent value to read the table at.
+To read the table call interpolate and pass it an independent value to read the table at.
 
     (interpolate table1d 2.0)
 
 The result would be 3.0
 
-Higher dimension tables are still hashes of pairs, except the dependent values
-are also hash maps of pairs.
+Higher dimension tables are still maps containing pairs, except the dependent values
+are also maps.
 
 For example, a bivariant table could look like this:
 

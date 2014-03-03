@@ -1,8 +1,4 @@
 (ns ninterpolate.core)
-;(use 'clojure.tools.trace)
-
-
-
 
 (defn- bracket2 
     "returns a list containing 2 key value pairs that bracket the x value. the first 2 pairs or last 2 pairs are returned if x is 
@@ -122,7 +118,10 @@
 
 
 
-(defmulti interpolate (fn [table xr & xrs] (map? xr)))
+(defmulti interpolate 
+ "interpolates a table (map) using one using the supplied values. tables
+  can be nested"
+  (fn [table xr & xrs] (map? xr)))
 
 ;
 ; no options supplied with the independent argument so just call linear interpolation without extrapolation
