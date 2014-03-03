@@ -115,12 +115,10 @@
 )
 
 
-
-
-
 (defmulti interpolate 
- "interpolates a table (map) using one using the supplied values. tables
-  can be nested"
+ "Interpolates a table (map) using one or more supplied values. Tables
+  can be nested. The number of arguments should be consistent with the
+  number of table dimensions."
   (fn [table xr & xrs] (map? xr)))
 
 ;
