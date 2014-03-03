@@ -8,7 +8,11 @@
     "returns a list containing 2 key value pairs that bracket the x value. the first 2 pairs or last 2 pairs are returned if x is 
      outside of the range of keys. note a key is always a number but a value can be a number or another list"
     [x table]
-    {:pre [(>= (count table) 2)]}
+    {:pre
+       [(map? table)
+        (>= (count table) 2)
+       ]
+    }
     (let [
           m (into (sorted-map) table)
           lows  (subseq m <= x)
@@ -25,7 +29,10 @@
 (defn- bracket3 
     "returns a list containing 3 key value pairs that bracket the x value."
     [x table]
-    {:pre [(>= (count table) 3)]}
+    {:pre [
+      (map? table)
+      (>= (count table) 3)
+    ]}
     (let [
           m (into (sorted-map) table)
           lows  (subseq m <= x)
